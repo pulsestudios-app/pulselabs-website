@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account - StudyPulse | Pulse Studios</title>
+  <meta name="description" content="Request account and data deletion for StudyPulse">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="brand" href="../../index.html" aria-label="Pulse Studios home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Pulse Studios</span>
+      </a>
+      <div class="nav-links">
+        <a href="../../soundpulse/delete-account/">SoundPulse Delete Account</a>
+        <a href="../../studypulse-legal.html">StudyPulse Legal</a>
+        <a href="mailto:support@pulsestudios.app">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="legal-main deletion-main">
+    <section class="hero legal-hero">
+      <div class="legal-app-heading">
+        <img class="legal-app-logo" src="../../images/studypulse-logo.png" alt="StudyPulse logo" width="58" height="58">
+        <p class="eyebrow">StudyPulse account deletion</p>
+      </div>
+      <h1>Delete Your StudyPulse Account</h1>
+      <p class="hero-copy">
+        We respect your right to delete your account and personal data. This page explains how to request account
+        deletion for StudyPulse.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>What Gets Deleted</h2>
+      <ul>
+        <li>Account information, including email and display name</li>
+        <li>All generated study materials, transcripts, summaries, quizzes, flashcards, and mind maps</li>
+        <li>Saved community content</li>
+        <li>Subscription information stored by StudyPulse</li>
+        <li>Usage history and preferences</li>
+        <li>Any reports or blocks you've created</li>
+      </ul>
+    </section>
+
+    <section class="legal-section">
+      <h2>What Might Be Retained</h2>
+      <p>Some data may be retained for legal compliance:</p>
+      <ul>
+        <li>Payment records required by tax law, retained for up to 7 years</li>
+        <li>Anonymized analytics data that no longer identifies your account</li>
+        <li>Logs required for security, abuse prevention, or fraud prevention</li>
+      </ul>
+    </section>
+
+    <section class="legal-section contact-section">
+      <h2>How To Request Deletion</h2>
+      <div class="request-grid">
+        <div>
+          <h3>Option A - Email Request</h3>
+          <p>Send an email to <a href="mailto:support@pulsestudios.app">support@pulsestudios.app</a> with:</p>
+          <ul>
+            <li>Subject: "Account Deletion Request - StudyPulse"</li>
+            <li>Your account email address</li>
+            <li>Confirmation you want to delete your account</li>
+          </ul>
+          <p>We will process your request within 30 days.</p>
+        </div>
+
+        <form class="request-form" id="deletion-request-form" data-app-name="StudyPulse" data-subject="Account Deletion Request - StudyPulse">
+          <h3>Option B - Web Form</h3>
+          <label>
+            App
+            <input type="text" name="app" value="StudyPulse" readonly>
+          </label>
+          <label>
+            Email address
+            <input type="email" name="email" autocomplete="email" required placeholder="you@example.com">
+          </label>
+          <label>
+            Reason for deletion
+            <select name="reason">
+              <option value="">Select a reason</option>
+              <option>Not using the app anymore</option>
+              <option>Privacy concerns</option>
+              <option>Switching to another service</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>
+            Additional details
+            <textarea name="details" rows="5" placeholder="Optional"></textarea>
+          </label>
+          <button class="button primary" type="submit">Submit request</button>
+          <p class="form-note">
+            Submitting opens a prefilled email to support@pulsestudios.app. We do not store form entries on this page.
+          </p>
+          <p class="form-confirmation" id="form-confirmation" role="status" aria-live="polite" hidden>
+            Request received. We'll process within 30 days and send confirmation to your email.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <section class="legal-section">
+      <h2>Processing Time</h2>
+      <p>
+        Account deletion requests are processed within 30 days as required by Google Play Store policy. You'll receive
+        a confirmation email when complete.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Cancel Subscriptions First</h2>
+      <p>
+        Before deleting, please cancel any active subscriptions through Google Play Store to avoid future charges.
+        Account deletion does not automatically cancel subscriptions.
+      </p>
+      <p>
+        <a href="https://play.google.com/store/account/subscriptions" rel="noopener">Manage Google Play subscriptions</a>
+      </p>
+
+      <h3>Subscription Cancellation Instructions</h3>
+      <ol>
+        <li>Open Google Play Store on your device</li>
+        <li>Tap profile icon &rarr; Payments &amp; subscriptions &rarr; Subscriptions</li>
+        <li>Tap StudyPulse</li>
+        <li>Tap "Cancel subscription"</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>Pulse Studios</strong>
+      <p>StudyPulse account deletion requests.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../../index.html">Home</a>
+      <a href="../../studypulse-legal.html">StudyPulse Legal</a>
+      <a href="../../soundpulse/delete-account/">SoundPulse Delete Account</a>
+      <a href="mailto:support@pulsestudios.app">Support</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById("deletion-request-form");
+      var confirmation = document.getElementById("form-confirmation");
+      if (!form || !confirmation) return;
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var data = new FormData(form);
+        var appName = form.getAttribute("data-app-name") || "StudyPulse";
+        var subject = form.getAttribute("data-subject") || "Account Deletion Request - StudyPulse";
+        var email = String(data.get("email") || "").trim();
+        var reason = String(data.get("reason") || "Not provided").trim() || "Not provided";
+        var details = String(data.get("details") || "Not provided").trim() || "Not provided";
+        var body = [
+          "App: " + appName,
+          "Account email: " + email,
+          "Reason: " + reason,
+          "Additional details: " + details,
+          "",
+          "I confirm that I want to delete my " + appName + " account and associated personal data."
+        ].join("\n");
+
+        confirmation.hidden = false;
+        window.location.href = "mailto:support@pulsestudios.app?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      });
+    })();
+  </script>
+</body>
+</html>
